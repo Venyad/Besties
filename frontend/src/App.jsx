@@ -14,6 +14,10 @@ function App(){
             textAlign={"center"}
             mb={8}
             ></Text>
+            <Text as={"span"} bgGradient={"linear(to-r, cyan.400, blue.500)"} bgClip={"text"}>
+						My Besties
+					</Text>
+                    <UserGrid users={users} setUsers={setUsers} />
             </Container>
         </Stack>
     )
