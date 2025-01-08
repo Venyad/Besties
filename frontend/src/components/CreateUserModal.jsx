@@ -14,7 +14,7 @@ const CreateUserModal = () => {
     >
     <ModalOverlay/>
     <ModalContent>
-      <ModalHeader>My new BFF </ModalHeader>
+      <ModalHeader>My new BFF 🔥 </ModalHeader>
     </ModalContent>
     </Modal>
   </>)
