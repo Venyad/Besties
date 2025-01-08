@@ -15,6 +15,12 @@ const CreateUserModal = () => {
     <ModalOverlay/>
     <ModalContent>
       <ModalHeader>My new BFF 🔥 </ModalHeader>
+      <ModalCloseButton/>
+      <ModalBody pb={6}>
+        <Flex alignItems={"center"} gap={4}>
+          <FormControl></FormControl>
+        </Flex>
+      </ModalBody>
     </ModalContent>
     </Modal>
   </>)
