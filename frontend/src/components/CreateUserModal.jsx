@@ -18,7 +18,11 @@ const CreateUserModal = () => {
       <ModalCloseButton/>
       <ModalBody pb={6}>
         <Flex alignItems={"center"} gap={4}>
-          <FormControl></FormControl>
+          <FormControl>
+            <FormLabel>Full Name</FormLabel>
+            <Input placeholder="Full Name"/>
+
+          </FormControl>
         </Flex>
       </ModalBody>
     </ModalContent>
