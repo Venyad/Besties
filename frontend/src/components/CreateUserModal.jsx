@@ -1,4 +1,5 @@
-import { Button, useDisclosure } from "@chakra-ui/react";
+import { Button, useDisclosure, ModalOverlay,Flex,
+        FormControl,Input,Modal,ModalBody,ModalCloseButton,ModalContent,ModalFooter,ModalHeader,Radio,RadioGroup,Textarea } from "@chakra-ui/react";
 import { BiAddToQueue } from "react-icons/bi";
 const CreateUserModal = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()
@@ -20,11 +21,34 @@ const CreateUserModal = () => {
         <Flex alignItems={"center"} gap={4}>
           <FormControl>
             <FormLabel>Full Name</FormLabel>
-            <Input placeholder="Full Name"/>
+            <Input placeholder="John Doe"/>
+
+          </FormControl>
+          <FormControl>
+            <FormLabel>Role</FormLabel>
+            <Input placeholder="Software Engineer"/>
 
           </FormControl>
         </Flex>
+        <FormControl mt={4}>
+            <FormLabel>Description</FormLabel>
+            <Textarea resize={"none"} overflowY={"hidden"} placeholder="He's a software engineer who loves to code and build things."></Textarea>
+
+          </FormControl>
+          <RadioGroup mt={4}>
+            <Flex gap={5}>
+              <Radio value='male'>Male</Radio>
+              <Radio value='female'>Female</Radio>
+
+            </Flex>
+          </RadioGroup>
       </ModalBody>
+      <ModalFooter>
+        <Button colorScheme={blue} mr={3}>
+          Add
+        </Button>
+        <Button onClick={onClose}>Cancel</Button>
+      </ModalFooter>
     </ModalContent>
     </Modal>
   </>)
