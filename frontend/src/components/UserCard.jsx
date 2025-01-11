@@ -19,11 +19,13 @@ const UserCard = ({user}) => {
 							size={"sm"}
 							aria-label='See menu'
 							icon={<BiTrash size={20} />}
-							onClick={handleDeleteUser}
 						/>
                     </Flex>
                 </Flex>
             </CardHeader>
+            <CardBody>
+				<Text>{user.description}</Text>
+			</CardBody>
         </Card>
     )
 }
