@@ -1,7 +1,10 @@
 import { Grid } from "@chakra-ui/react"
 import UserCard from "./UserCard"
+import { USERS } from "@/dummy/dummy"
+import { useState } from "react"
 
 const UserGrid = () => {
+  const [users,setUsers] = useState([]);
   return (
     <Grid templateColumns={{
       base:"1fr",
