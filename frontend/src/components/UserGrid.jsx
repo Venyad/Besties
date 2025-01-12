@@ -3,8 +3,7 @@ import UserCard from "./UserCard"
 import { USERS } from "@/dummy/dummy"
 import { useState } from "react"
 
-const UserGrid = () => {
-  const [users,setUsers] = useState([]);
+const UserGrid = ({users}) => {
   return (
     <Grid templateColumns={{
       base:"1fr",
