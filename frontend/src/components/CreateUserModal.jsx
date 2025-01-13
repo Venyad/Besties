@@ -16,6 +16,52 @@ const CreateUserModal = ({ setUsers }) => {
   const toast = useToast();
 
 
+  const handleCreateUser = async (e) => {
+		e.preventDefault(); 
+		setIsLoading(true);
+		try {
+			const res = await fetch("http://localhost:5000/api/friends", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify(inputs),
+			});
+
+			const data = await res.json();
+			if (!res.ok) {
+				throw new Error(data.error);
+			}
+
+			toast({
+				status: "success",
+				title: "Yayy! 🎉",
+				description: "Friend created successfully.",
+				duration: 2000,
+				position: "top-center",
+			});
+			onClose();
+			setUsers((prevUsers) => [...prevUsers, data]);
+
+			setInputs({
+				name: "",
+				role: "",
+				description: "",
+				gender: "",
+			}); 
+		} catch (error) {
+			toast({
+				status: "error",
+				title: "An error occurred.",
+				description: error.message,
+				duration: 4000,
+			});
+		} finally {
+			setIsLoading(false);
+		}
+	};
+
+
   return (
     <>
       <Button>
